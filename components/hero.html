@@ -1,0 +1,124 @@
+<div class="relative min-h-[100vh] flex flex-col justify-center items-center overflow-hidden pt-20 bg-black">
+    
+    <div class="relative z-10 max-w-5xl mx-auto px-4 text-center mt-10 zoom-reveal active">
+        
+        <h1 class="flex flex-wrap justify-center items-center gap-3 md:gap-4 mb-4">
+            
+            <span class="shine-container shine-white text-6xl md:text-8xl font-black tracking-tighter drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]">
+                YLA
+            </span>
+            
+            <span class="shine-container shine-red text-6xl md:text-8xl font-black tracking-tighter drop-shadow-[0_0_20px_rgba(229,9,20,0.4)]">
+                TV
+            </span>
+            
+            <span class="shine-container shine-white text-6xl md:text-8xl font-black tracking-tighter drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]">
+                APP
+            </span>
+        </h1>
+        
+        <p class="text-lg md:text-2xl text-gray-200 mb-16 font-medium leading-relaxed max-w-4xl mx-auto drop-shadow-md" x-html="heroText"></p>
+        
+        <div class="flex flex-row justify-center items-center gap-3 sm:gap-5 max-w-lg mx-auto w-full reveal active delay-100">
+            <a href="#android" class="platform-box glass-card hover:bg-green-500 hover:border-green-500 group">
+                <i class="fab fa-android text-2xl md:text-4xl text-green-500 group-hover:text-white transition-colors duration-300"></i>
+                <span class="platform-text">Android</span>
+            </a>
+            
+            <a href="#tv" class="platform-box glass-card hover:bg-blue-600 hover:border-blue-600 group">
+                <i class="fas fa-tv text-2xl md:text-4xl text-blue-400 group-hover:text-white transition-colors duration-300"></i>
+                <span class="platform-text">TV Box</span>
+            </a>
+            
+            <a href="#windows" class="platform-box glass-card hover:bg-cyan-600 hover:border-cyan-600 group">
+                <i class="fab fa-windows text-2xl md:text-4xl text-cyan-500 group-hover:text-white transition-colors duration-300"></i>
+                <span class="platform-text tracking-tighter sm:tracking-normal">Windows</span>
+            </a>
+            
+            <a href="#ios" class="platform-box glass-card hover:bg-white hover:border-white group">
+                <i class="fab fa-apple text-2xl md:text-4xl text-gray-300 group-hover:text-black transition-colors duration-300"></i>
+                <span class="platform-text">iOS</span>
+            </a>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* ========================================================
+       🔴 Cinematic Diagonal Light Sweep Effect (Strictly Unchanged)
+       ======================================================== */
+    .shine-container {
+        display: inline-block;
+        color: transparent; 
+        -webkit-background-clip: text;
+        background-clip: text;
+        background-size: 200% auto;
+    }
+
+    .shine-white {
+        background-image: linear-gradient(
+            110deg,
+            rgba(255, 255, 255, 0.15) 20%,
+            rgba(255, 255, 255, 0.4) 40%,
+            rgba(255, 255, 255, 1) 50%, 
+            rgba(255, 255, 255, 0.4) 60%,
+            rgba(255, 255, 255, 0.15) 80%
+        );
+        -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2); 
+        animation: shineSweep 3s linear infinite;
+    }
+
+    .shine-red {
+        background-image: linear-gradient(
+            110deg,
+            rgba(229, 9, 20, 0.3) 20%,
+            rgba(229, 9, 20, 0.6) 40%,
+            rgba(255, 120, 120, 1) 50%, 
+            rgba(229, 9, 20, 0.6) 60%,
+            rgba(229, 9, 20, 0.3) 80%
+        );
+        -webkit-text-stroke: 1px rgba(229, 9, 20, 0.4);
+        animation: shineSweep 3s linear infinite;
+    }
+
+    @keyframes shineSweep {
+        to { background-position: -200% center; }
+    }
+
+    /* ========================================================
+       🔴 Clean Unified Highlighted Keyphrases (အရောင်တစ်ရောင်တည်း)
+       ======================================================== */
+    .kp { 
+        font-weight: 800; 
+        display: inline-block; 
+        padding: 0 4px; 
+    }
+    
+    /* ========================================================
+       🔴 Clean Unified Highlighted Keyphrases (အဝါရောင်)
+       ======================================================== */
+    .kp-neon { 
+        color: #FFCC00; /* အဝါရောင် (Yellow) */
+        text-shadow: 0 0 15px rgba(255, 204, 0, 0.6); /* အဝါရောင် Glow Effect */
+    }
+
+    /* ========================================================
+       🔴 Platform Boxes (Strictly Unchanged)
+       ======================================================== */
+    .platform-box {
+        flex: 1 1 0px; 
+        aspect-ratio: 1 / 1; 
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+        justify-content: center;
+        border-radius: 1rem; 
+        transition: all 0.3s ease-in-out;
+        padding: 0.5rem; 
+    }
+    .platform-text { font-weight: 800; color: #ffffff; margin-top: 0.5rem; font-size: 10px; }
+    @media (min-width: 640px) {
+        .platform-box { padding: 1.5rem; }
+        .platform-text { font-size: 14px; }
+    }
+</style>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="my" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <title>YLA TV - Movies, Series & Football Live</title>
+    <meta name="description" content="နောက်ဆုံးထွက် မြန်မာစာတန်းထိုး ဇာတ်ကားများ၊ ဇာတ်လမ်းတွဲများ၊ ဘောလုံးပွဲ Live, Highlight များ နှင့် နိုင်ငံတကာ TV Channels များကို YLA TV ဆော့ဝဲလ်တွင် ကြည့်ရှုနိုင်ပါသည်။">
+    <meta name="keywords" content="YLA TV, Myanmar Streaming, Live Football, Movies, Series, Android, iOS, Windows, TV Box">
+    <link rel="icon" type="image/png" href="assets/logo.png">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ylatv.com/">
+    <meta property="og:title" content="YLA TV - Unlimited Entertainment">
+    <meta property="og:description" content="အကောင်းဆုံး မြန်မာစာတန်းထိုး ဇာတ်ကားများနှင့် ဘောလုံးပွဲများကို YLA TV တွင် ကြည့်ရှုလိုက်ပါ။">
+    <meta property="og:image" content="https://ylatv.com/assets/og-image.png"> 
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { brand: '#E50914', dark: '#0A0A0A', surface: '#141414', surface2: '#262626' }
+                }
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="config.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+
+<body x-data="siteConfig()" x-init="initApp()" class="antialiased selection:bg-brand selection:text-white">
+
+    <div id="popup-container"></div>
+    <div id="navbar-container"></div>
+    <div id="hero-container"></div>
+    <div id="android-container"></div>
+    <div id="tv-container"></div>
+    <div id="windows-container"></div>
+    <div id="ios-container"></div>
+    <div id="downloads-container"></div>
+    <div id="faq-container"></div>
+    <div id="footer-container"></div>
+
+    <script>
+        // HTML ဖိုင်များကို လှမ်းခေါ်မည့် Function
+        async function loadComponent(elementId, filePath) {
+            try {
+                const response = await fetch(filePath);
+                if (response.ok) {
+                    const html = await response.text();
+                    document.getElementById(elementId).innerHTML = html;
+                } else {
+                    console.error("Error loading " + filePath);
+                }
+            } catch (error) {
+                console.error("Fetch error for " + filePath, error);
+            }
+        }
+
+        // Website ပွင့်သည်နှင့် ဖိုင်အားလုံးကို ပြိုင်တည်းဆွဲယူမည်
+        document.addEventListener("DOMContentLoaded", async () => {
+            await Promise.all([
+                loadComponent('popup-container', 'components/popup.html'),
+                loadComponent('navbar-container', 'components/navbar.html'),
+                loadComponent('hero-container', 'components/hero.html'),
+                loadComponent('android-container', 'components/android.html'),
+                loadComponent('tv-container', 'components/tv.html'),
+                loadComponent('windows-container', 'components/windows.html'),
+                loadComponent('ios-container', 'components/ios.html'),
+                loadComponent('downloads-container', 'components/downloads.html'),
+                loadComponent('faq-container', 'components/faq.html'),
+                loadComponent('footer-container', 'components/footer.html')
+            ]);
+        });
+    </script>
+
+</body>
+</html>

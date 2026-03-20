@@ -1,0 +1,126 @@
+<section id="ios" class="py-24 border-t border-white/5 relative overflow-hidden bg-[#000000]">
+    
+    <div class="absolute inset-0 z-0 pointer-events-none">
+        <div class="absolute top-1/4 right-0 w-[500px] h-[500px] bg-white/5 rounded-full blur-[150px] animate-pulse-glow-slow"></div>
+        <div class="absolute bottom-1/4 left-0 w-[400px] h-[400px] bg-gray-500/10 rounded-full blur-[120px] animate-pulse-glow"></div>
+        <div class="absolute inset-0 opacity-10" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC44KSIvPjwvc3ZnPg=='); background-repeat: repeat;"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-10 items-center">
+            
+            <div x-data="{ currentSlide: 0, totalSlides: 3, slideInterval: null }" 
+                 x-init="slideInterval = setInterval(() => { currentSlide = (currentSlide + 1) % totalSlides }, 5000)"
+                 class="w-full flex flex-col items-center justify-center zoom-reveal" x-intersect="$el.classList.add('active')">
+                
+                <div class="relative flex flex-col items-center w-full max-w-[220px] mx-auto animate-float-phone">
+                    
+                    <div class="w-full aspect-[1/2] relative cursor-grab active:cursor-grabbing"
+                         @touchstart="touchstartX = $event.changedTouches[0].screenX"
+                         @touchend="touchendX = $event.changedTouches[0].screenX; 
+                                    if (touchstartX - touchendX > 50) currentSlide = (currentSlide + 1) % totalSlides; 
+                                    if (touchendX - touchstartX > 50) currentSlide = (currentSlide - 1 + totalSlides) % totalSlides; 
+                                    clearInterval(slideInterval); slideInterval = setInterval(() => { currentSlide = (currentSlide + 1) % totalSlides }, 5000);"
+                         x-data="{ touchstartX: 0, touchendX: 0 }">
+                        
+                        <div class="absolute inset-4 bg-white/20 blur-2xl rounded-full -z-10 animate-pulse-glow"></div>
+                        
+                        <img loading="lazy" src="assets/ss1.png" class="absolute inset-0 w-full h-full object-contain transition-opacity duration-1000 ease-in-out drop-shadow-[0_20px_40px_rgba(255,255,255,0.15)]" :class="currentSlide === 0 ? 'opacity-100 z-10' : 'opacity-0 z-0'" onerror="this.src='https://via.placeholder.com/350x700/transparent/111?text=iOS+Screen+1'">
+                        <img loading="lazy" src="assets/ss2.png" class="absolute inset-0 w-full h-full object-contain transition-opacity duration-1000 ease-in-out drop-shadow-[0_20px_40px_rgba(255,255,255,0.15)]" :class="currentSlide === 1 ? 'opacity-100 z-10' : 'opacity-0 z-0'" onerror="this.src='https://via.placeholder.com/350x700/transparent/111?text=iOS+Screen+2'">
+                        <img loading="lazy" src="assets/ss3.png" class="absolute inset-0 w-full h-full object-contain transition-opacity duration-1000 ease-in-out drop-shadow-[0_20px_40px_rgba(255,255,255,0.15)]" :class="currentSlide === 2 ? 'opacity-100 z-10' : 'opacity-0 z-0'" onerror="this.src='https://via.placeholder.com/350x700/transparent/111?text=iOS+Screen+3'">
+                    </div>
+
+                    <div class="flex flex-row justify-center gap-3 mt-8 z-30">
+                        <button @click="currentSlide = 0; clearInterval(slideInterval); slideInterval = setInterval(() => { currentSlide = (currentSlide + 1) % totalSlides }, 5000);" class="h-3 rounded-full transition-all duration-300" :class="currentSlide === 0 ? 'bg-white w-8 shadow-[0_0_10px_rgba(255,255,255,0.8)]' : 'bg-gray-700 w-3'"></button>
+                        <button @click="currentSlide = 1; clearInterval(slideInterval); slideInterval = setInterval(() => { currentSlide = (currentSlide + 1) % totalSlides }, 5000);" class="h-3 rounded-full transition-all duration-300" :class="currentSlide === 1 ? 'bg-white w-8 shadow-[0_0_10px_rgba(255,255,255,0.8)]' : 'bg-gray-700 w-3'"></button>
+                        <button @click="currentSlide = 2; clearInterval(slideInterval); slideInterval = setInterval(() => { currentSlide = (currentSlide + 1) % totalSlides }, 5000);" class="h-3 rounded-full transition-all duration-300" :class="currentSlide === 2 ? 'bg-white w-8 shadow-[0_0_10px_rgba(255,255,255,0.8)]' : 'bg-gray-700 w-3'"></button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="reveal delay-100" x-intersect="$el.classList.add('active')">
+                
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 text-gray-200 mb-6 border border-white/20 shadow-[0_0_15px_rgba(255,255,255,0.1)]">
+                    <i class="fab fa-apple text-sm"></i>
+                    <span class="font-bold text-xs uppercase tracking-widest">Apple Experience</span>
+                </div>
+                
+                <template x-if="platforms.ios.isAvailable">
+                    <div>
+                        <h2 class="text-4xl md:text-5xl font-black mb-5 tracking-tighter text-white drop-shadow-md" x-text="content.ios.title"></h2>
+                        <p class="text-gray-400 text-lg mb-10 leading-relaxed max-w-xl" x-html="content.ios.desc"></p>
+                        
+                        <div class="space-y-4">
+                            <template x-for="(link, index) in content.ios.links" :key="index">
+                                
+                                <a :href="link.url" class="ios-glass-btn relative group flex items-center justify-between p-5 rounded-2xl overflow-hidden transition-all duration-300">
+                                    
+                                    <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-shimmer z-0"></div>
+                                    
+                                    <div class="flex items-center gap-5 relative z-10">
+                                        
+                                        <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-gray-700/50 to-gray-900/50 border border-white/20 flex items-center justify-center text-2xl text-white shadow-inner group-hover:bg-white group-hover:text-black group-hover:border-white transition-all duration-300 group-hover:scale-110">
+                                            <i class="fas fa-download"></i>
+                                        </div>
+                                        
+                                        <div>
+                                            <h3 class="text-xl font-bold text-white group-hover:text-gray-200 transition-colors" x-text="link.name"></h3>
+                                            <div class="text-xs text-gray-400 font-medium mt-1" x-text="link.note"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center relative z-10 group-hover:bg-white transition-colors duration-300 shadow-[0_0_10px_rgba(255,255,255,0.05)] group-hover:shadow-[0_0_20px_rgba(255,255,255,0.4)]">
+                                        <i class="fas fa-download text-gray-300 group-hover:text-black transition-transform group-hover:translate-y-1"></i>
+                                    </div>
+                                </a>
+
+                            </template>
+                        </div>
+                    </div>
+                </template>
+                
+                <template x-if="!platforms.ios.isAvailable">
+                    <div class="glass-card p-10 rounded-3xl border border-white/10 text-center relative overflow-hidden">
+                        <div class="absolute inset-0 bg-white/5 blur-xl"></div>
+                        <i class="fas fa-lock text-6xl text-gray-600 mb-5 relative z-10"></i>
+                        <h2 class="text-3xl font-black mb-3 text-white relative z-10" x-text="content.ios.comingSoonTitle"></h2>
+                        <p class="text-gray-300 font-bold uppercase tracking-widest mb-5 relative z-10">Under Development</p>
+                        <p class="text-gray-500 mb-10 leading-relaxed relative z-10" x-text="content.ios.comingSoonDesc"></p>
+                    </div>
+                </template>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Premium Clean Glass Button for iOS */
+    .ios-glass-btn {
+        background: rgba(20, 20, 20, 0.6);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    }
+    .ios-glass-btn:hover {
+        background: rgba(40, 40, 40, 0.8);
+        border-color: rgba(255, 255, 255, 0.3);
+        transform: translateY(-3px);
+        box-shadow: 0 10px 30px -5px rgba(255, 255, 255, 0.15);
+    }
+
+    /* Floating Phone Animation */
+    @keyframes float-phone {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+    }
+    .animate-float-phone { 
+        animation: float-phone 6s ease-in-out infinite; 
+    }
+
+    /* Shimmer Sweep Animation */
+    @keyframes shimmer {
+        100% { transform: translateX(100%); }
+    }
+</style>

@@ -1,0 +1,139 @@
+<section id="downloads" class="py-24 relative overflow-hidden bg-[#050505] border-t border-white/5">
+    
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-red-600/10 blur-[150px] pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        <div class="text-center mb-16 reveal" x-intersect="$el.classList.add('active')">
+            <h2 class="text-4xl md:text-6xl font-black mb-4 uppercase tracking-tighter text-white drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]">
+                Downloads <span class="text-brand">App</span>
+            </h2>
+            <p class="text-gray-400 text-lg">Platform အားလုံးအတွက် ဆော့ဝဲလ်နှင့် လင့်ခ်များကို တစ်နေရာတည်းတွင် အလွယ်တကူ ရယူနိုင်ပါသည်။</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
+
+            <template x-if="platforms.android.isAvailable">
+                <div class="flex flex-col gap-4 reveal" x-intersect="$el.classList.add('active')">
+                    
+                    <h3 class="text-xl font-black text-white mb-2 flex items-center gap-3 border-b border-white/10 pb-4">
+                        <i class="fab fa-android text-green-500 drop-shadow-[0_0_10px_rgba(16,185,129,0.8)] text-2xl"></i> Android
+                    </h3>
+                    
+                    <template x-for="(link, index) in content.android.links" :key="index">
+                        <a :href="(link.url && link.url !== '#' && link.url !== '') ? link.url : 'javascript:void(0)'"
+                           class="relative group p-4 rounded-2xl glass-card hover:bg-[#0f0f0f] border border-white/5 hover:border-green-500/50 flex items-center gap-4 transition-all duration-300 shadow-lg hover:shadow-[0_0_20px_rgba(16,185,129,0.15)] hover:-translate-y-1 overflow-hidden">
+                            
+                            <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:animate-shimmer z-0"></div>
+
+                            <div class="w-12 h-12 rounded-xl bg-green-500/10 flex items-center justify-center text-xl text-green-500 group-hover:bg-green-500 group-hover:text-white transition-colors relative z-10">
+                                <i class="fab fa-android"></i> </div>
+                            
+                            <div class="flex-1 relative z-10">
+                                <div class="font-bold text-white group-hover:text-green-400 transition-colors" x-text="link.name"></div>
+                                <div class="text-xs text-gray-500" x-text="link.note || 'Android Device'"></div>
+                            </div>
+                            
+                            <i class="fas fa-download text-gray-600 group-hover:text-green-500 transition-colors relative z-10"></i>
+                        </a>
+                    </template>
+                </div>
+            </template>
+
+            <template x-if="platforms.tv.isAvailable">
+                <div class="flex flex-col gap-4 reveal delay-100" x-intersect="$el.classList.add('active')">
+                    
+                    <h3 class="text-xl font-black text-white mb-2 flex items-center gap-3 border-b border-white/10 pb-4">
+                        <i class="fas fa-tv text-red-500 drop-shadow-[0_0_10px_rgba(229,9,20,0.8)] text-2xl"></i> TV Box
+                    </h3>
+
+                    <a :href="(content.tv.mainDownload.url && content.tv.mainDownload.url !== '#' && content.tv.mainDownload.url !== '') ? content.tv.mainDownload.url : 'javascript:void(0)'"
+                       class="relative group p-4 rounded-2xl glass-card hover:bg-[#0f0f0f] border border-white/5 hover:border-red-500/50 flex items-center gap-4 transition-all duration-300 shadow-lg hover:shadow-[0_0_20px_rgba(229,9,20,0.15)] hover:-translate-y-1 overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:animate-shimmer z-0"></div>
+
+                        <div class="w-12 h-12 rounded-xl bg-red-500/10 flex items-center justify-center text-xl text-red-500 group-hover:bg-red-500 group-hover:text-white transition-colors relative z-10">
+                            <i class="fas fa-tv"></i> </div>
+                        <div class="flex-1 relative z-10">
+                            <div class="font-bold text-white group-hover:text-red-400 transition-colors" x-text="content.tv.mainDownload.name"></div>
+                            <div class="text-xs text-gray-500" x-text="'Version: ' + (content.tv.mainDownload.version || 'v1.0')"></div>
+                        </div>
+                        <i class="fas fa-download text-gray-600 group-hover:text-red-500 transition-colors relative z-10"></i>
+                    </a>
+
+                    <template x-for="(code, index) in content.tv.downloaderCodes" :key="index">
+                        <a :href="(code.url && code.url !== '#' && code.url !== '') ? code.url : 'javascript:void(0)'"
+                           class="relative group p-4 rounded-2xl glass-card hover:bg-[#0f0f0f] border border-white/5 hover:border-red-500/50 flex items-center gap-4 transition-all duration-300 shadow-lg hover:shadow-[0_0_20px_rgba(229,9,20,0.15)] hover:-translate-y-1 overflow-hidden">
+                            <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:animate-shimmer z-0"></div>
+
+                            <div class="w-12 h-12 rounded-xl bg-red-500/10 flex items-center justify-center text-xl text-red-500 group-hover:bg-red-500 group-hover:text-white transition-colors relative z-10">
+                                <i class="fas fa-tv"></i> </div>
+                            <div class="flex-1 relative z-10">
+                                <div class="font-bold text-white group-hover:text-red-400 transition-colors" x-text="'Code: ' + code.code"></div>
+                                <div class="text-xs text-gray-500" x-text="code.name"></div>
+                            </div>
+                            <i :class="(code.url && code.url !== '#' && code.url !== '') ? 'fas fa-download' : 'fas fa-chevron-right'" class="text-gray-600 group-hover:text-red-500 transition-colors relative z-10"></i>
+                        </a>
+                    </template>
+                </div>
+            </template>
+
+            <template x-if="platforms.windows.isAvailable">
+                <div class="flex flex-col gap-4 reveal delay-200" x-intersect="$el.classList.add('active')">
+                    
+                    <h3 class="text-xl font-black text-white mb-2 flex items-center gap-3 border-b border-white/10 pb-4">
+                        <i class="fab fa-windows text-cyan-500 drop-shadow-[0_0_10px_rgba(6,182,212,0.8)] text-2xl"></i> Windows
+                    </h3>
+                    
+                    <template x-for="(link, index) in content.windows.links" :key="index">
+                        <a :href="(link.url && link.url !== '#' && link.url !== '') ? link.url : 'javascript:void(0)'"
+                           class="relative group p-4 rounded-2xl glass-card hover:bg-[#0f0f0f] border border-white/5 hover:border-cyan-500/50 flex items-center gap-4 transition-all duration-300 shadow-lg hover:shadow-[0_0_20px_rgba(6,182,212,0.15)] hover:-translate-y-1 overflow-hidden">
+                            <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:animate-shimmer z-0"></div>
+
+                            <div class="w-12 h-12 rounded-xl bg-cyan-500/10 flex items-center justify-center text-xl text-cyan-500 group-hover:bg-cyan-500 group-hover:text-white transition-colors relative z-10">
+                                <i class="fab fa-windows"></i> </div>
+                            <div class="flex-1 relative z-10">
+                                <div class="font-bold text-white group-hover:text-cyan-400 transition-colors" x-text="link.name"></div>
+                                <div class="text-xs text-gray-500" x-text="link.note || 'Desktop App'"></div>
+                            </div>
+                            <i class="fas fa-download text-gray-600 group-hover:text-cyan-500 transition-colors relative z-10"></i>
+                        </a>
+                    </template>
+                </div>
+            </template>
+
+            <template x-if="platforms.ios.isAvailable">
+                <div class="flex flex-col gap-4 reveal delay-300" x-intersect="$el.classList.add('active')">
+                    
+                    <h3 class="text-xl font-black text-white mb-2 flex items-center gap-3 border-b border-white/10 pb-4">
+                        <i class="fab fa-apple text-gray-300 drop-shadow-[0_0_10px_rgba(255,255,255,0.6)] text-2xl"></i> iOS
+                    </h3>
+                    
+                    <template x-for="(link, index) in content.ios.links" :key="index">
+                        <a :href="(link.url && link.url !== '#' && link.url !== '') ? link.url : 'javascript:void(0)'"
+                           class="relative group p-4 rounded-2xl glass-card hover:bg-[#0f0f0f] border border-white/5 hover:border-gray-300/50 flex items-center gap-4 transition-all duration-300 shadow-lg hover:shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:-translate-y-1 overflow-hidden">
+                            <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:animate-shimmer z-0"></div>
+
+                            <div class="w-12 h-12 rounded-xl bg-gray-500/20 flex items-center justify-center text-xl text-gray-300 group-hover:bg-white group-hover:text-black transition-colors relative z-10">
+                                <i class="fab fa-apple"></i> </div>
+                            <div class="flex-1 relative z-10">
+                                <div class="font-bold text-white group-hover:text-gray-300 transition-colors" x-text="link.name"></div>
+                                <div class="text-xs text-gray-500" x-text="link.note || 'Apple Device'"></div>
+                            </div>
+                            <i class="fas fa-download text-gray-600 group-hover:text-white transition-colors relative z-10"></i>
+                        </a>
+                    </template>
+                </div>
+            </template>
+
+        </div>
+    </div>
+</section>
+
+<style>
+    @keyframes shimmer {
+        100% { transform: translateX(100%); }
+    }
+    .group:hover .animate-shimmer {
+        animation: shimmer 1s infinite;
+    }
+</style>
