@@ -14,7 +14,7 @@ function siteConfig() {
         platforms: {
             android: { isAvailable: true },
             tv: { isAvailable: true },
-            windows: { isAvailable: false },
+            windows: { isAvailable: true },
             ios: { isAvailable: false }
         },
 
@@ -61,9 +61,9 @@ function siteConfig() {
                 
                 // 🔴 Windows အတွက် Download Link ၃ ခု
                 links: [
-                    { name: "Download Link 1", url: "#", icon: "fab fa-windows", note: "Version 1.0" },
-                    { name: "Download Link 2", url: "#", icon: "fas fa-desktop", note: "Version 1.0" },
-                    { name: "Download Link 3", url: "#", icon: "fas fa-file-archive", note: "Version 1.0" }
+                    { name: "Download Link 1", url: "https://cdn.ylatvapp.store/file/download-apk/windows/YLATV_Setup.exe", icon: "fab fa-windows", note: "Version 1.0" },
+                    { name: "Download Link 2", url: "https://cdn.ylatv.com/file/download-apk/windows/YLATV_Setup.exe", icon: "fas fa-desktop", note: "Version 1.0" },
+                    { name: "Download Link 3", url: "https://cdn.balthumamathonebuu.store/file/download-apk/windows/YLATV_Setup.exe", icon: "fas fa-file-archive", note: "Version 1.0" }
                 ],
                 
                 comingSoonTitle: "Windows Software",
