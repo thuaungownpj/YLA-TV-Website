@@ -25,9 +25,9 @@ function siteConfig() {
                 desc: "Android ဖုန်းနှင့် Tablet များအတွက် သီးသန့် ထုတ်ပေးထားသော Version ဖြစ်ပါတယ်၊ အောက်က လင့်များထဲမှ အဆင်ပြေရာ လင့်တစ်ခုခုမှ Download ရယူပါ။",
                 imgUrl: "assets/ss1.png",
                 links: [
-                    { name: "Download Link 1", url: "https://cdn.ylatvapp.store/file/download-apk/android/YLA-TV(v2.1).apk", icon: "fab fa-android" },
-                    { name: "Download Link 2", url: "https://cdn.ylatv.com/file/download-apk/android/YLA-TV(v2.1).apk", icon: "fas fa-download" },
-                    { name: "Download Link 3", url: "https://cdn.balthumamathonebuu.store/file/download-apk/android/YLA-TV(v2.1).apk", icon: "fas fa-cloud-download-alt" }
+                    { name: "Download Link 1", url: "https://cdn.ylatvapp.store/file/download-apk/android/YLA-TV(v2.2).apk", icon: "fab fa-android" },
+                    { name: "Download Link 2", url: "https://cdn.ylatv.com/file/download-apk/android/YLA-TV(v2.2).apk", icon: "fas fa-download" },
+                    { name: "Download Link 3", url: "https://cdn.balthumamathonebuu.store/file/download-apk/android/YLA-TV(v2.2).apk", icon: "fas fa-cloud-download-alt" }
                 ],
                 comingSoonTitle: "Android App",
                 comingSoonDesc: "Android အတွက် ပြုပြင်မွမ်းမံနေဆဲဖြစ်ပါသည်။ ထွက်ရှိလာပါက ချက်ချင်းသိနိုင်ရန် Telegram Channel ကို Join ထားပေးပါ။"
