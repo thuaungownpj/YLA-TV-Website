@@ -5,7 +5,7 @@ function siteConfig() {
         // ၁။ General Settings (အထွေထွေ)
         telegramUrl: "https://t.me/ylatv",
         showPopup: true,
-        popupNotice: "Appထဲတွင် ပြသထားသော Football Live နှင့် Highlight များသည် Free Server များကို သာ အသုံးပြုထားပါသဖြင့် အဆင်ပြေမှ အသုံးပြုပေးပါ",
+        popupNotice: "Appထဲတွင် ပြသထားသော Football Live နှင့် TV Channels များသည် Free Server များကို သာ အသုံးပြုထားပါသဖြင့် အဝိုင်းလည်ခြင်း၊ လိုင်းကျခြင်းမျိုးရှိတတ်ပါသည်၊ Movies နှင့် Seriesများသည် Premium Serverများကိုအသုံးပြုပေးထားပါသည်။ ထို့ကြောင့် အဆင်ပြေမှ အသုံးပြုပေးပါ",
         
         // ၂။ Hero Section Settings (အပေါ်ဆုံးမျက်နှာပြင်)
         heroText: "နောက်ဆုံးထွက် မြန်မာစာတန်းထိုး <span class='kp kp-neon kp-movie'>ဇာတ်ကားများ</span>, <span class='kp kp-neon kp-series'>ဇာတ်လမ်းတွဲများ</span>, <span class='kp kp-neon kp-football'>ဘောလုံးပွဲ Live</span>, <span class='kp kp-neon kp-highlight'>Highlight များ</span> နှင့် <span class='kp kp-neon kp-tv'>နိုင်ငံတကာ TV Channels</span> များကို YLA TV ဆော့ဝဲလ်တွင် ကြည့်ရှုနိုင်ပါသည်",
