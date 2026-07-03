@@ -1,0 +1,16 @@
+<footer class="bg-black py-10 text-center border-t border-surface2">
+    <img src="assets/logo.png" class="w-12 h-12 mx-auto rounded-lg mb-4 opacity-50" onerror="this.style.display='none'">
+    <p class="text-gray-600 font-medium">© 2026 YLA TV. All Rights Reserved.</p>
+</footer>
+
+<div x-data="{ showScroll: false }" @scroll.window="showScroll = (window.pageYOffset > 500)">
+    <button x-show="showScroll" @click="window.scrollTo({top: 0, behavior: 'smooth'})" style="display: none;" 
+            class="fixed bottom-24 right-6 bg-surface2 border border-white/10 text-white w-12 h-12 rounded-full shadow-xl flex items-center justify-center hover:bg-brand hover:border-brand transition z-40">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+</div>
+
+<a :href="telegramUrl" target="_blank" class="fixed bottom-8 right-6 z-40 bg-[#229ED9] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(34,158,217,0.4)] hover:scale-110 hover:bg-[#1e8cc0] transition-all group">
+    <span class="absolute right-full mr-4 bg-white text-black text-xs font-bold px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition whitespace-nowrap">Join Channel</span>
+    <i class="fab fa-telegram-plane text-2xl"></i>
+</a>

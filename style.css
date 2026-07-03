@@ -1,0 +1,92 @@
+/* style.css */
+
+/* 🔴 Google Fonts မှ မြန်မာဖောင့် (Noto Sans Myanmar) နှင့် အင်္ဂလိပ်ဖောင့် (Inter) ကို လှမ်းခေါ်ထားပါသည် */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&family=Noto+Sans+Myanmar:wght@400;700&display=swap');
+
+/* 🔴 Base Styles (အခြေခံ ဒီဇိုင်းများ) */
+body { 
+    font-family: 'Inter', 'Noto Sans Myanmar', sans-serif; 
+    background-color: #0A0A0A; 
+    color: #ffffff; 
+    overflow-x: hidden;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* 🔴 Netflix Style Fade Effect (Hero Section နောက်ခံအတွက် အမည်းရောင် Fade) */
+.hero-gradient {
+    background: linear-gradient(to top, #0A0A0A 0%, rgba(10,10,10,0.8) 40%, rgba(10,10,10,0.4) 100%);
+}
+
+/* 🔴 Glassmorphism Cards (မှန်သားလို အကြည်ရောင် ကတ်ပြားဒီဇိုင်း) */
+.glass-card {
+    background: rgba(20, 20, 20, 0.7);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+}
+
+/* Card Hover Effects */
+.glass-card:hover {
+    border-color: rgba(229, 9, 20, 0.5); /* Hover လုပ်လျှင် အနီရောင်ဘောင်လေး လင်းလာမည် */
+    transform: translateY(-5px);
+}
+
+/* 🔴 Smooth Background Transition (နောက်ခံပုံ ပြောင်းသည့်အခါ Smooth ဖြစ်စေရန်) */
+.bg-transition { 
+    transition: background-image 1s ease-in-out; 
+}
+
+/* 🔴 Custom Scrollbar (Browser ၏ မူလ Scrollbar အစား အမိုက်စား Scrollbar ပြောင်းရန်) */
+::-webkit-scrollbar { 
+    width: 8px; 
+}
+::-webkit-scrollbar-track { 
+    background: #000000; 
+}
+::-webkit-scrollbar-thumb { 
+    background: #333333; 
+    border-radius: 4px; 
+}
+::-webkit-scrollbar-thumb:hover { 
+    background: #E50914; /* Scrollbar ကို ထိလျှင် အနီရောင်ပြောင်းမည် */
+}
+
+/* 🔴 Navigation Bar Blur Effect (အောက်သို့ဆွဲချလျှင် ပေါ်လာမည့် Nav Bar) */
+.nav-scrolled {
+    background-color: rgba(0, 0, 0, 0.95) !important;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* ==========================================================================
+   🔴 Custom Animations (AOS Error ကို ဖြေရှင်းရန် ကိုယ်ပိုင် Animation များ)
+   ========================================================================== */
+
+/* အောက်မှ အပေါ်သို့ တက်လာမည့် Animation */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+}
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* သေးရာမှ ကြီးလာမည့် (Zoom In) Animation */
+.zoom-reveal {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+}
+.zoom-reveal.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Delay Utility Classes (Animation အချိန်နောက်ကျစေရန်) */
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }

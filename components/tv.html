@@ -1,0 +1,93 @@
+<section id="tv" class="py-24 border-t border-white/5 relative overflow-hidden bg-[#050505]">
+    
+    <div class="absolute inset-0 z-0 pointer-events-none">
+        <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-red-600/5 rounded-full blur-[150px]"></div>
+        <div class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-blue-600/5 rounded-full blur-[150px]"></div>
+        <div class="absolute inset-0 opacity-10" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC44KSIvPjwvc3ZnPg=='); background-repeat: repeat;"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-10 items-center">
+            
+            <div class="w-full flex flex-col items-center justify-center zoom-reveal" x-intersect="$el.classList.add('active')">
+                <div class="relative w-full max-w-[450px] md:max-w-[550px] animate-float-tv mx-auto">
+                    <div class="absolute inset-x-10 top-10 bottom-16 bg-blue-500/20 blur-[80px] rounded-full"></div>
+                    <img :src="content.tv.imgUrl" class="relative z-10 w-full drop-shadow-[0_20px_50px_rgba(0,0,0,0.8)]" alt="Android TV App" onerror="this.src='https://via.placeholder.com/600x400/0a0a0a/e50914?text=YLA+TV'">
+                </div>
+            </div>
+            
+            <div class="reveal delay-100" x-intersect="$el.classList.add('active')">
+                
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-red-500/10 text-red-500 mb-6 border border-red-500/20 shadow-[0_0_15px_rgba(229,9,20,0.1)]">
+                    <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
+                    <span class="font-bold text-xs uppercase tracking-widest">Big Screen Experience</span>
+                </div>
+                
+                <template x-if="platforms.tv.isAvailable">
+                    <div>
+                        <h2 class="text-4xl md:text-5xl font-black mb-5 tracking-tighter text-white drop-shadow-md" x-text="content.tv.title"></h2>
+                        <p class="text-gray-400 text-lg mb-10 leading-relaxed max-w-xl" x-html="content.tv.desc"></p>
+                        
+                        <div class="space-y-8">
+                            <div>
+                                <h4 class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-3 ml-1">Direct APK Install</h4>
+                                <a :href="content.tv.mainDownload.url" class="relative group block w-full rounded-2xl p-[1px] bg-gradient-to-r from-red-600 via-purple-600 to-blue-600 bg-[length:200%_auto] hover:bg-[100%_auto] transition-all duration-500 shadow-[0_0_20px_rgba(229,9,20,0.2)] hover:shadow-[0_0_30px_rgba(229,9,20,0.4)] hover:-translate-y-1">
+                                    <div class="relative flex items-center justify-between p-5 md:p-6 rounded-2xl bg-[#0a0a0a] backdrop-blur-xl group-hover:bg-[#0f0f0f] transition-colors overflow-hidden">
+                                        <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:animate-shimmer"></div>
+                                        <div class="flex items-center gap-4 md:gap-5 relative z-10">
+                                            <div class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-red-500/10 flex items-center justify-center text-xl md:text-2xl text-red-500 border border-red-500/30 group-hover:scale-110 group-hover:bg-red-500 group-hover:text-white transition-all duration-300 shadow-inner">
+                                                <i class="fas fa-cloud-download-alt animate-bounce-slow"></i>
+                                            </div>
+                                            <div>
+                                                <h3 class="text-xl md:text-2xl font-black text-white group-hover:text-red-400 transition" x-text="content.tv.mainDownload.name"></h3>
+                                                <div class="text-xs md:text-sm text-gray-400 font-medium mt-1">
+                                                    <i class="fas fa-check-circle text-green-500 mr-1"></i>
+                                                    <span x-text="'Latest Stable: ' + content.tv.mainDownload.version"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center relative z-10 group-hover:bg-red-500 transition-colors duration-300">
+                                            <i class="fas fa-arrow-right text-gray-400 group-hover:text-white transition-transform group-hover:translate-x-1"></i>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div>
+                                <h4 class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-3 ml-1 flex items-center gap-2">
+                                    <i class="fas fa-keyboard"></i> Downloader App Codes
+                                </h4>
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                    <div class="relative p-5 rounded-2xl border border-cyan-500/20 bg-gradient-to-b from-cyan-900/20 to-transparent overflow-hidden group hover:-translate-y-1 transition-all duration-300 shadow-[0_0_15px_rgba(6,182,212,0.05)] hover:shadow-[0_0_25px_rgba(6,182,212,0.2)] hover:border-cyan-500/50 text-center">
+                                        <span class="inline-block px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-400 text-[10px] font-bold border border-cyan-500/20 mb-2 uppercase tracking-wider" x-text="content.tv.downloaderCodes[0].name"></span>
+                                        <div class="text-[10px] text-gray-500 font-medium mb-1">Enter Code</div>
+                                        <div class="text-3xl font-black text-white drop-shadow-[0_0_10px_rgba(6,182,212,0.5)] group-hover:scale-105 transition-transform" x-text="content.tv.downloaderCodes[0].code"></div>
+                                    </div>
+                                    <div class="relative p-5 rounded-2xl border border-fuchsia-500/20 bg-gradient-to-b from-fuchsia-900/20 to-transparent overflow-hidden group hover:-translate-y-1 transition-all duration-300 shadow-[0_0_15px_rgba(217,70,239,0.05)] hover:shadow-[0_0_25px_rgba(217,70,239,0.2)] hover:border-fuchsia-500/50 text-center">
+                                        <span class="inline-block px-3 py-1 rounded-full bg-fuchsia-500/10 text-fuchsia-400 text-[10px] font-bold border border-fuchsia-500/20 mb-2 uppercase tracking-wider" x-text="content.tv.downloaderCodes[1].name"></span>
+                                        <div class="text-[10px] text-gray-500 font-medium mb-1">Enter Code</div>
+                                        <div class="text-3xl font-black text-white drop-shadow-[0_0_10px_rgba(217,70,239,0.5)] group-hover:scale-105 transition-transform" x-text="content.tv.downloaderCodes[1].code"></div>
+                                    </div>
+                                    <div class="relative p-5 rounded-2xl border border-emerald-500/20 bg-gradient-to-b from-emerald-900/20 to-transparent overflow-hidden group hover:-translate-y-1 transition-all duration-300 shadow-[0_0_15px_rgba(16,185,129,0.05)] hover:shadow-[0_0_25px_rgba(16,185,129,0.2)] hover:border-emerald-500/50 text-center">
+                                        <span class="inline-block px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-[10px] font-bold border border-emerald-500/20 mb-2 uppercase tracking-wider" x-text="content.tv.downloaderCodes[2].name"></span>
+                                        <div class="text-[10px] text-gray-500 font-medium mb-1">Enter Code</div>
+                                        <div class="text-3xl font-black text-white drop-shadow-[0_0_10px_rgba(16,185,129,0.5)] group-hover:scale-105 transition-transform" x-text="content.tv.downloaderCodes[2].code"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    @keyframes float-tv { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-15px); } }
+    .animate-float-tv { animation: float-tv 6s ease-in-out infinite; }
+    @keyframes bounce-slow { 0%, 100% { transform: translateY(-10%); } 50% { transform: translateY(10%); } }
+    .animate-bounce-slow { animation: bounce-slow 3s ease-in-out infinite; }
+    @keyframes shimmer { 100% { transform: translateX(100%); } }
+    .group:hover .animate-shimmer { animation: shimmer 1s infinite; }
+</style>
