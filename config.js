@@ -25,9 +25,9 @@ function siteConfig() {
                 desc: "Android ဖုန်းနှင့် Tablet များအတွက် သီးသန့် ထုတ်ပေးထားသော Version ဖြစ်ပါတယ်၊ အောက်က လင့်များထဲမှ အဆင်ပြေရာ လင့်တစ်ခုခုမှ Download ရယူပါ။",
                 imgUrl: "assets/ss1.png",
                 links: [
-                    { name: "Download Link 1", url: "https://cdn.ylatvapp.store/file/download-apk/android/YLA-TV(v2.4).apk", icon: "fab fa-android" },
-                    { name: "Download Link 2", url: "https://cdn.ylatv.com/file/download-apk/android/YLA-TV(v2.4).apk", icon: "fas fa-download" },
-                    { name: "Download Link 3", url: "https://cdn.balthumamathonebuu.store/file/download-apk/android/YLA-TV(v2.4).apk", icon: "fas fa-cloud-download-alt" }
+                    { name: "Download Link 1", url: "https://cdn.ylatv.com/file/download-apk/android/YLA-TV(v2.5).apk", icon: "fab fa-android" },
+                    { name: "Download Link 2", url: "https://cdn.balthumamathonebuu.store/file/download-apk/android/YLA-TV(v2.5).apk", icon: "fas fa-download" },
+                    { name: "Download Link 3", url: "https://cdn.ylatvapp.store/file/download-apk/android/YLA-TV(v2.5).apk", icon: "fas fa-cloud-download-alt" }
                 ],
                 comingSoonTitle: "Android App",
                 comingSoonDesc: "Android အတွက် ပြုပြင်မွမ်းမံနေဆဲဖြစ်ပါသည်။ ထွက်ရှိလာပါက ချက်ချင်းသိနိုင်ရန် Telegram Channel ကို Join ထားပေးပါ။"
@@ -40,15 +40,15 @@ function siteConfig() {
                 // 🔴 Download Button (၁) ခုအတွက် Link
                 mainDownload: { 
                     name: "Download Android TV APK", 
-                    url: "https://cdn.ylatv.com/file/download-apk/tv/YLA-TV(v2.0).apk", 
-                    version: "v2.0" 
+                    url: "https://cdn.ylatv.com/file/download-apk/tv/YLA-TV(v2.1).apk", 
+                    version: "v2.1" 
                 },
 
                 // 🔴 Downloader Codes (၃) ခုအတွက် Data
                 downloaderCodes: [
-                    { name: "AFTV Code 1", code: "4215311" },
-                    { name: "AFTV Code 2", code: "4389136" },
-                    { name: "AFTV Code 3", code: "4985395" }
+                    { name: "AFTV Code 1", code: "7608865" },
+                    { name: "AFTV Code 2", code: "9680896" },
+                    { name: "AFTV Code 3", code: "3420902" }
                 ],
 
                 comingSoonTitle: "TV Box App",
@@ -61,9 +61,9 @@ function siteConfig() {
                 
                 // 🔴 Windows အတွက် Download Link ၃ ခု
                 links: [
-                    { name: "Download Link 1", url: "https://cdn.ylatvapp.store/file/download-apk/windows/YLATV_Setup.exe", icon: "fab fa-windows", note: "Version 1.0" },
-                    { name: "Download Link 2", url: "https://cdn.ylatv.com/file/download-apk/windows/YLATV_Setup.exe", icon: "fas fa-desktop", note: "Version 1.0" },
-                    { name: "Download Link 3", url: "https://cdn.balthumamathonebuu.store/file/download-apk/windows/YLATV_Setup.exe", icon: "fas fa-file-archive", note: "Version 1.0" }
+                    { name: "Download Link 1", url: "https://cdn.ylatvapp.store/file/download-apk/windows/YLATV_Setup.exe", icon: "fab fa-windows", note: "Version 1.1" },
+                    { name: "Download Link 2", url: "https://cdn.ylatv.com/file/download-apk/windows/YLATV_Setup.exe", icon: "fas fa-desktop", note: "Version 1.1" },
+                    { name: "Download Link 3", url: "https://cdn.balthumamathonebuu.store/file/download-apk/windows/YLATV_Setup.exe", icon: "fas fa-file-archive", note: "Version 1.1" }
                 ],
                 
                 comingSoonTitle: "Windows Software",
