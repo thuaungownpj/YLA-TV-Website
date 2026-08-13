@@ -61,9 +61,9 @@ function siteConfig() {
                 
                 // 🔴 Windows အတွက် Download Link ၃ ခု
                 links: [
-                    { name: "Download Link 1", url: "https://cdn.balthumamathonebuu.store/file/download-apk/windows/YLA-TV(v1.1).exe", icon: "fab fa-windows", note: "Version 1.2" },
-                    { name: "Download Link 2", url: "https://cdn.ylatv.com/file/download-apk/windows/YLA-TV(v1.1).exe", icon: "fas fa-desktop", note: "Version 1.2" },
-                    { name: "Download Link 3", url: "https://cdn.balthumamathonebuu.store/file/download-apk/windows/YLA-TV(v1.1).exe", icon: "fas fa-file-archive", note: "Version 1.2" }
+                    { name: "Download Link 1", url: "https://cdn.balthumamathonebuu.store/file/download-apk/windows/YLA-TV(v1.1).exe", icon: "fab fa-windows", note: "Version 1.1" },
+                    { name: "Download Link 2", url: "https://cdn.ylatv.com/file/download-apk/windows/YLA-TV(v1.1).exe", icon: "fas fa-desktop", note: "Version 1.1" },
+                    { name: "Download Link 3", url: "https://cdn.balthumamathonebuu.store/file/download-apk/windows/YLA-TV(v1.1).exe", icon: "fas fa-file-archive", note: "Version 1.1" }
                 ],
                 
                 comingSoonTitle: "Windows Software",
